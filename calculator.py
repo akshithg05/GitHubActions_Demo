@@ -1,47 +1,55 @@
-# Python program for simple calculator
-# Function to add two numbers
-def add(num1, num2):
-    return num1 + num2
+# This function adds two numbers
+def add(x, y):
+    return x + y
 
-# Function to subtract two numbers
-def subtract(num1, num2):
-    return num1 - num2
+# This function subtracts two numbers
+def subtract(x, y):
+    return x - y
 
-# Function to multiply two numbers
-def multiply(num1, num2):
-    return num1 * num2
+# This function multiplies two numbers
+def multiply(x, y):
+    return x * y
 
-# Function to divide two numbers
-def divide(num1, num2):
-    return num1 / num2
-
-print("Please select operation -\n" \
-        "1. Add\n" \
-        "2. Subtract\n" \
-        "3. Multiply\n" \
-        "4. Divide\n")
+# This function divides two numbers
+def divide(x, y):
+    return x / y
 
 
-# Take input from the user
-select = int(input("Select operations form 1, 2, 3, 4 :"))
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
 
-number_1 = int(input("Enter first number: "))
-number_2 = int(input("Enter second number: "))
+while True:
+    # take input from the user
+    choice = input("Enter choice(1/2/3/4): ")
 
-if select == 1:
-    print(number_1, "+", number_2, "=",
-                    add(number_1, number_2))
+    # check if choice is one of the four options
+    if choice in ('1', '2', '3', '4'):
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
 
-elif select == 2:
-    print(number_1, "-", number_2, "=",
-                    subtract(number_1, number_2))
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
 
-elif select == 3:
-    print(number_1, "*", number_2, "=",
-                    multiply(number_1, number_2))
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
 
-elif select == 4:
-    print(number_1, "/", number_2, "=",
-                    divide(number_1, number_2))
-else:
-    print("Invalid input")
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
+
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
+        
+        # check if user wants another calculation
+        # break the while loop if answer is no
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        if next_calculation == "no":
+          break
+    else:
+        print("Invalid Input")
