@@ -1,33 +1,14 @@
-# This function adds two numbers
-def add(x, y):
-    return x + y
+def Add(a,b):
+    return a+b
 
 
-# This function subtracts two numbers
-def subtract(x, y):
-    return x - y
+def SayHello():
+    print("Hello")
 
+def Subtract(a,b):
+    return a-b
 
-while True:
-    choice = input("Enter choice(1/2/3/4): ")
-
-
-    if choice in ('1', '2', '3', '4'):
-        try:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
-        except ValueError:
-            print("Invalid input. Please enter a number.")
-            continue
-    
-    if choice == '1':
-        print(num1, "+", num2, "=", add(num1, num2))
-    
-    elif choice == '2':
-        print(num1, "-", num2, "=", subtract(num1, num2))
-    
-    next_calculation = input("Let's do next calculation? (yes/no): ")
-    if next_calculation == "no":
-        break
-    else:
-        print("Invalid Input")
+if __name__ == '__main__':
+    SayHello()
+    Add(3,4)
+    Subtract(5,6)
