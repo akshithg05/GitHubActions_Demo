@@ -12,3 +12,17 @@ jobs:
 
       - name: Super-Linter
         uses: github/super-linter@v4.10.1
+        
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " The job was triggered by a ${{ github.event_name }} event."
+      - run: echo " This job is now running on a ${{ runner.os }} server h"
+      - run: echo " The name of branch is ${{ github.ref }} and repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo " The ${{ github.repository }} repository has been cloned."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "status is ${{ job.status }}."
