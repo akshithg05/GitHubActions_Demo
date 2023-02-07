@@ -3,7 +3,7 @@ name: Super-Linter
 run-name: ${{ github.actor }} running code
 on: push
 jobs:
-  Basic Actions:
+  BasicActions:
     runs-on: ubuntu-latest
     steps:
       - name: Few Basic steps
