@@ -1,1 +1,27 @@
+name: Super-Linter
+run-name: ${{ github.actor }} running code
+on: push
+jobs:
+  Basic Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Few Basic steps
+      - run: echo " Job was triggered due to  ${{ github.event_name }} event  "
+      - run: echo " Job is now running on a ${{ runner.os }} "
+      - run: echo " The Branch is ${{ github.ref }} and the repository is ${{ github.repository }}."
+
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "This job's status is ${{ job.status }}."
+
+
+  Super-Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Super-Linter
+        uses: github/super-linter@v4.10.1
 
