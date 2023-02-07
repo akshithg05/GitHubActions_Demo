@@ -10,8 +10,7 @@ def Subtract(a, b):
     return a - b
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     SayHello()
     Add(3, 4)
     Subtract(5, 6)
