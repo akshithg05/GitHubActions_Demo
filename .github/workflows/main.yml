@@ -12,6 +12,10 @@ jobs:
 
       - name: Super-Linter
         uses: github/super-linter@v4.10.1
+
+      - name: Set up python
+        uses: actions/setup-python@v4.5.0
+        
         
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
